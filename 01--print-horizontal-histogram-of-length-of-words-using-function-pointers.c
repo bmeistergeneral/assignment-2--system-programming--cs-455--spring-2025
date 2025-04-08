@@ -34,4 +34,35 @@ void bubbleSort(int* array, size_t size, bool (*compare)(int, int)) {
         }
     }
 }
+// Main function for the bubble sort program
+void bubbleSortProgram() {
+    const size_t SIZE = 10;
+    int a[SIZE] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
 
+    printf("Enter 1 for ascending order, 2 for descending order: ");
+    int choice;
+    scanf("%d", &choice);
+
+    // Function pointer 'comparisonFunc' that can point to a function
+    // taking two integers and returning a boolean
+    bool (*comparisonFunc)(int, int);
+
+    if (choice == 1) {
+        comparisonFunc = ascending; // Point to the ascending comparison function
+        bubbleSort(a, SIZE, comparisonFunc); // Call bubbleSort with the ascending comparison
+        printf("Sorted array (ascending): ");
+    } else if (choice == 2) {
+        comparisonFunc = descending; // Point to the descending comparison function
+        bubbleSort(a, SIZE, comparisonFunc); // Call bubbleSort with the descending comparison
+        printf("Sorted array (descending): ");
+    } else {
+        printf("Invalid choice.\n");
+        return;
+    }
+    // Print the sorted array
+    for (size_t i = 0; i < SIZE; ++i) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    printf("----------------------------------------------------------\n");
+}
