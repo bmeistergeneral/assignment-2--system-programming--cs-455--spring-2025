@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include "sorting.h"
 
 // Function to swap two integer elements in an array
 void swap(int* element1Ptr, int* element2Ptr) {

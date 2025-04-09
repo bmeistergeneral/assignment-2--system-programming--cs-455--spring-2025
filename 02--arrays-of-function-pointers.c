@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include "sorting.h"
 
 // Number of students and exams
 const size_t STUDENTS = 3;
