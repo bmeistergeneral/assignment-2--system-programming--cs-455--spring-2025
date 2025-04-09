@@ -8,12 +8,12 @@ EXECUTABLE=$(FILENAME_MAIN).out
 all: build run
 
 build:
-$(CC) $(FLAGS) -c $(FILENAME_MAIN).c -o $(FILENAME_MAIN).o
-$(CC) $(FLAGS) -c $(FILENAME_LIB).c -o $(FILENAME_LIB).o
-$(CC) $(FLAGS) $(FILENAME_MAIN).o $(FILENAME_LIB).o -o $(EXECUTABLE)
+	$(CC) $(FLAGS) -c $(FILENAME_MAIN).c -o $(FILENAME_MAIN).o
+	$(CC) $(FLAGS) -c $(FILENAME_LIB).c -o $(FILENAME_LIB).o
+	$(CC) $(FLAGS) $(FILENAME_MAIN).o $(FILENAME_LIB).o -o $(EXECUTABLE)
 
 run:
-./$(EXECUTABLE)
+	./$(EXECUTABLE)
 
 clean:
-rm -fr $(EXECUTABLE) *.o *.dSYM
+	rm -fr $(EXECUTABLE) *.o *.dSYM
